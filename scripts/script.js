@@ -1,24 +1,21 @@
 $(document).ready(function(){
   $("#favoriteThings").submit(function(event){
     var group1 = [];
-    // console.log("Group 1 Pre Loop: ", group1);
-    var group2 = [];
+    // // console.log("Group 1 Pre Loop: ", group1);
     var inputs = ["food", "dessert", "movie", "animal", "snack", "holiday", "activity"];
     inputs.forEach(function(input){
       var userInput = $('input#' + input).val();
-      console.log("User Input: ", userInput);
-      console.log("Type of: ", typeof(userInput));
-      $(".favoriteThingList").append("<li>" + userInput + "</li>");
+      // console.log("User Input: ", userInput);
+      // console.log("Type of: ", typeof(userInput));
       group1.push(userInput);
-      console.log("Group 1 In Loop: ", userInput);
+      // console.log("Group 1 In Loop: ", userInput);
+      // console.log("Array inside forEach: ", group1);
     })
-    // var group1 = [food, dessert, snack];
-    // var group2 = [movie, animal, holiday, activity];
 
+    group1.forEach(function(arrayItem){
+      $(".favoriteThingList").append("<li>" + arrayItem + "</li>");
+    });
 
-    //
-    //
-    //
     // var food = $("input#food").val();
     // var dessert = $("input#dessert").val();
     // var movie = $("input#movie").val();
@@ -27,9 +24,6 @@ $(document).ready(function(){
     // var holiday = $("input#holiday").val();
     // var activity = $("input#activity").val();
 
-
-    console.log(group1);
-
     // $(".favoriteThingList").append("<li>" + food + "</li>");
     // $(".favoriteThingList").append("<li>" + dessert + "</li>");
     // $(".favoriteThingList").append("<li>" + movie + "</li>");
@@ -37,8 +31,6 @@ $(document).ready(function(){
     // $(".favoriteThingList").append("<li>" + snack + "</li>");
     // $(".favoriteThingList").append("<li>" + holiday + "</li>");
     // $(".favoriteThingList").append("<li>" + activity + "</li>");
-
-
     event.preventDefault();
   })
 })
